@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="Đatlichkham.css">
+  </head>
+
+    <body>
+      <div class="inner-layer">
+          <div class="container">
+            <div class="row no-margin">
+                <div class="col-sm-7">
+                    <div class="content">
+                        <h1>Đặt lịch khám tại đây để tiết kiệm thời gian của bạn</h1>
+                    </div>
+                </div>
+        
+                <div class="col-sm-5">
+                    <div class="form-data">
+                        <div class="form-head">
+                            <h2>Đặt lịch</h2>
+                        </div>
+                                <div class="form-body">
+                                    <div class="row form-row">
+                                      <input type="text" placeholder="Họ tên" class="form-control">
+                                    </div>
+                                    <div class="row form-row">
+                                      <input type="text" placeholder="Email" class="form-control">
+                                    </div>
+                                     <div class="row form-row">
+                                      <input type="text" placeholder="Số điện thoại" class="form-control">
+                                    </div>
+                                   <div class="row form-row">
+                                      <input id="dat" type="text" placeholder="Ngày giờ khám" class="form-control">
+                                    </div>
+                                    <div class="row form-row">
+                                        <input type="text" placeholder="Dịch vụ" class="form-control">
+                                      </div>
+                                     <div class="row form-row">
+                                        <input id="dat" type="text" placeholder="Nha sĩ" class="form-control">
+                                      </div>
+                              
+                        
+                             <div class="row form-row">
+                               <button class="btn btn-success btn-appointment">
+                                Đặt ngay
+                               </button>
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+           
+            </div>
+          </div>
+      </div>
+      
+    </body>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+
+    <script>
+      $(document).ready(function(){
+          $("#dat").datepicker();
+      })
+    </script>
+    
+  </body>
+</html>
