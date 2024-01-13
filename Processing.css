@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Search */
+.search-item button{
+    color: #2a88cb;
+    border-color: #2a88cb;
+}
+
+.search-item button:hover
+,.search-item button:active{
+    background-color: #2a88cb; /* Thay đổi màu nền khi hover vào */
+    color: #fff; /* Thay đổi màu chữ khi hover vào */
+}
+
+.search-item button:focus{
+    box-shadow: 0 0 0 0.25rem rgba(42, 136, 203, 0.5)
+}
+
+.search-item button:active:focus{
+    box-shadow: 0 0 0 0.25rem rgba(42, 136, 203, 0.5)
+}
+
+/* Table */
+.table>:not(caption)>*>*{
+    padding: 1rem 1rem;
+}
+
+.table-item-img{
+    width: 70px;
+}
+
+.table-item-set,
+.table-item-remove,
+.table-item-visible,
+.table-item-hide{
+    font-size: 20px;
+    padding: 8px;
+}
+
+.table-item-detail,
+.table-item-choose{
+    font-size: 26px;
+    padding: 8px;
+}
+
+td, th{
+    text-align: center;
+}

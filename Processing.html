@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý quá trình khám</title>
+  <link rel="stylesheet" href="./assets/font/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Processing.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div class="container">
+      <div class="row m-3">
+        <div class="search container-fluid col-md-6 offset-md-0">
+          <form class="d-flex search-item" role="search" id="searchForm">
+            <input class="form-control me-2" type="search" placeholder="Nhập tên bệnh nhân" aria-label="Search" id="searchInput">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+
+        <div class="btn-item-collect col-md-3 d-flex ">
+        <a type="button" class="btn btn-primary ms-auto" href="">
+            Thêm lịch khám
+        </a>
+       </div>
+    </div>
+
+      <div class="row">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Mã phiếu</th>
+              <th scope="col">Tên bệnh nhân</th>
+              <th scope="col">Khoa</th>
+              <th scope="col">Người khám</th>
+              <th scope="col">Ngày khám</th>
+              <th scope="col">Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</html>
