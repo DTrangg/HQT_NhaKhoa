@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("avatar.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 420px;
+    color: black;
+    border-radius: 10px;
+    padding: 30px 40px;
+    background-color: white;
+    opacity: 0.8;
+} 
+.wrapper p {
+    font-size: 20px;
+}
+
+.row {
+    margin: 0;
+}
+
+.wrapper .container {
+    width: 100%;
+    height: 100%;
+    margin: 20px 0;
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 10px;
+    text-align: left;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #0071AB;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    color: white;
+    font-weight: 550;
+    font-size: 16px;
+}
+
+.bill p {
+    text-align: center;
+    font-size: 25px;
+}
+
+.rowRight {
+    text-align: right;
+}
