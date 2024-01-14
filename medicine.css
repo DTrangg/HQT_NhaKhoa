@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 .action-header{
     font-size: 22px;
     font-weight: bold;
@@ -43,24 +42,18 @@
     padding: 1rem 1rem;
 }
 
-.table-item-img{
-    width: 70px;
+.table {
+    border-collapse: collapse;
 }
 
-.table-item-set,
-.table-item-remove,
-.table-item-visible,
-.table-item-hide{
-    font-size: 20px;
-    padding: 8px;
-}
-
-.table-item-detail,
-.table-item-choose{
-    font-size: 26px;
-    padding: 8px;
+tr th td {
+    border: 1px solid;
 }
 
 td, th{
     text-align: center;
+}
+
+th {
+    background-color: #AEE4FF;
 }
