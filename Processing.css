@@ -93,3 +93,7 @@ table {
 tr th td {
     border: 1px solid;
 }
+
+.btn-item-collect a {
+    margin-right: 10px;
+}
