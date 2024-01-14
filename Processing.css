@@ -70,3 +70,11 @@
 td, th{
     text-align: center;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+tr th td {
+    border: 1px solid;
+}
