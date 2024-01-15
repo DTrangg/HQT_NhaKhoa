@@ -5,22 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quản lý quá trình khám</title>
-  <link rel="stylesheet" href="./assets/font/fontawesome/css/all.min.css">
+  <title>Testing</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="Processing.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css" />
-  
-  <script>
-    function togglePopup() {
-      var popup = document.getElementById("popup");
-      popup.style.display = popup.style.display === "none" ? "block" : "none";
-    }
-  </script>
-</head>
 
+  
+</head>
 <body>
   <div class="app">
     <div class="container">
@@ -32,18 +25,15 @@
           </form>
         </div>
 
-        <div class="btn-item-collect col-md-4 d-flex ">
-        <a class="btn btn-primary ms-auto" href="">
-          Thêm lịch khám
-        </a>
+        <div class="btn-item-collect col-md-4 d-flex">
+          <button class="btn btn-primary ms-auto" onclick="openPopup1()">Thêm lịch khám</button>
 
-        <a class="btn btn-primary report-option-spend" href="">
-          Cập nhật lịch khám
-        </a>
-       </div>
-        
+          <button class="btn btn-primary report-option-spend" onclick="openPopup2()">Cập nhật lịch khám</button>
+        </div>
+
       </div>
 
+      
       <div class="row">
         <table class="table table-hover">
           <thead>
@@ -63,28 +53,188 @@
     </div>
   </div>
 
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <img src="images/avatar.jpg" alt="Patient Image">
-      <p><strong>Tên bệnh nhân:</strong> John Doe</p>
-      <p><strong>Mã bệnh nhân:</strong> ABC123</p>
-      <p><strong>Giới tính:</strong> Nam</p>
-      <p><strong>Ngày sinh:</strong> 123456789</p>
-      <p><strong>Số điện thoại:</strong> 123456789</p>
-      <p><strong>Email:</strong> XYZ Service</p>
-      <p><strong>Địa chỉ:</strong> XYZ Service</p>
-      <p><strong>Ghi chú:</strong> XYZ Service</p>
-      <p><strong>Dịch vụ khám:</strong> XYZ Service</p>
-      <p><strong>Siêu âm:</strong> <span id="ultrasoundQuantity">1</span> <input type="number" id="ultrasoundInput" min="1" value="1"></p>
-      <p><strong>Tên thuốc:</strong> <span id="medicineQuantity">1</span> <input type="number" id="medicineInput" min="1" value="1"></p>
-   
-      
-      <button onclick="updateRecord()">Cập nhật</button>
-      <button onclick="stopWorking()">Ngừng hoạt động</button>
-      <button onclick="deleteRecord()">Xóa</button>
-      <button onclick="togglePopup()">Đóng</button>
+  <div id="overlay"></div>
+
+  <div id="popup1" class="popup">
+    <div class="row">
+      <div>
+        <form>
+          <div class="mb-1">
+            <label for="patientName" class="form-label">Tên bệnh nhân</label>
+            <input type="text" class="form-control" id="patientName">
+          </div>
+          <div class="mb-1">
+            <label for="patientCode" class="form-label">Mã bệnh nhân</label>
+            <input type="text" class="form-control" id="patientCode">
+          </div>
+          <div class="mb-1">
+            <label for="gender" class="form-label">Giới tính</label>
+            <select class="form-select" id="gender">
+              <option value="male">Nam</option>
+              <option value="female">Nữ</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <label for="cccdNumber" class="form-label">Số CCCD</label>
+            <input type="text" class="form-control" id="cccdNumber">
+          </div>
+          <h5>Dịch vụ:</h5>
+          <div class="mb-1">
+            <label for="serviceName" class="form-label">Tên dịch vụ</label>
+            <input type="text" class="form-control" id="serviceName" value="Ultrasound">
+          </div>
+          <div class="mb-1">
+            <label for="serviceQuantity" class="form-label">Số lượng</label>
+            <input type="number" class="form-control" id="serviceQuantity" value="1">
+          </div>
+          <div class="mb-1">
+            <label for="servicePrice" class="form-label">Giá</label>
+            <input type="number" class="form-control" id="servicePrice" value="1000">
+          </div>
+          <div class="mb-1">
+            <label for="examinationDate" class="form-label">Ngày khám</label>
+            <input type="text" class="form-control" id="examinationDate" value="24/12/1023">
+          </div>
+          <div class="mb-1">
+            <label for="serviceAction" class="form-label">Hành động</label>
+            <input type="text" class="form-control" id="serviceAction" value="ABC">
+          </div>
+          <h5>Thuốc:</h5>
+          <div class="mb-1">
+            <label for="drugName" class="form-label">Tên thuốc</label>
+            <input type="text" class="form-control" id="drugName" value="Paracetamol">
+          </div>
+          <div class="mb-1">
+            <label for="drugQuantity" class="form-label">Số lượng</label>
+            <input type="number" class="form-control" id="drugQuantity" value="1">
+          </div>
+          <div class="mb-1">
+            <label for="drugPrice" class="form-label">Giá</label>
+            <input type="number" class="form-control" id="drugPrice" value="1000">
+          </div>
+          <div class="mb-1">
+            <label for="drugExaminationDate" class="form-label">Ngày khám</label>
+            <input type="text" class="form-control" id="drugExaminationDate" value="12/24/1023">
+          </div>
+          <div class="mb-1">
+            <label for="drugAction" class="form-label">Hành động</label>
+            <input type="text" class="form-control" id="drugAction" value="ABC">
+          </div>
+          <button onclick="closePopup1()">Close</button>
+          <button>Hoàn tất</button>
+        </form>
+      </div>
     </div>
   </div>
+              <div id="popup2" class="popup">
+              <div class="row">
+                <div>
+                  <form>
+                    <div class="mb-1">
+                      <label for="patientName" class="form-label">Tên bệnh nhân</label>
+                      <input type="text" class="form-control" id="patientName">
+                    </div>
+                    <div class="mb-1">
+                      <label for="patientCode" class="form-label">Mã bệnh nhân</label>
+                      <input type="text" class="form-control" id="patientCode">
+                    </div>
+                    <div class="mb-1">
+                      <label for="gender" class="form-label">Giới tính</label>
+                      <select class="form-select" id="gender">
+                        <option value="male">Nữ</option>
+                        <option value="female">Nam</option>
+                        <option value="other">Khác</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label for="birthDate" class="form-label">Ngày sinh</label>
+                      <input type="date" class="form-control" id="birthDate">
+                    </div>
+                    <div class="mb-1">
+                      <label for="phoneNumber" class="form-label">Số điện thoại</label>
+                      <input type="text" class="form-control" id="phoneNumber">
+                    </div>
+                    <div class="mb-1">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="mb-1">
+                      <label for="address" class="form-label">Địa chỉ</label>
+                      <textarea class="form-control" id="address"></textarea>
+                    </div>
+                    <h5>Dịch vụ</h5>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Tên dịch vụ</th>
+                          <th scope="col">Số lượng</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Ultrasound</td>
+                          <td>
+                            <select class="form-select">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <!-- Add more options if needed -->
+                            </select>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h5>Tên thuốc</h5>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Tên thước</th>
+                          <th scope="col">Số lượng</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Paracetamol</td>
+                          <td>
+                            <select class="form-select">
+                              <option value="10">10</option>
+                              <option value="20">20</option>
+                              <option value="30">30</option>
+                              <!-- Add more options if needed -->
+                            </select>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button onclick="closePopup2()">Close</button>
+                    <button>Cập nhật</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+  <script>
+    function openPopup1() {
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("popup1").style.display = "block";
+    }
+
+    function closePopup1() {
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("popup1").style.display = "none";
+    }
+
+    function openPopup2() {
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("popup2").style.display = "block";
+    }
+
+    function closePopup2() {
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("popup2").style.display = "none";
+    }
+  </script>
 </body>
 
 </html>
